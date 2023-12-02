@@ -30,13 +30,18 @@ ul > li {
 	box-sizing: border-box;
 	width: 280px;
 	display: flex;
-    align-items: center;
+	align-items: center;
 	min-height: 61px;
+	position: relative;
 }
-ul > li > button{
-    background-color: rgb(57, 52, 52);
-    position: absolute;
+
+ul > li > button {
+	background-color: rgb(57, 52, 52);
+	position: absolute;
+	right: 12px;
+	font-size: 24px;
 }
+
 .button {
 	width: 280px;
 	padding: 15px 30px;

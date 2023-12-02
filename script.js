@@ -1,21 +1,36 @@
 let count = 1;
 
+const deleteText = c => {
+	let element = document.getElementById(c - 1);
+	console.log(element, count);
+	element.remove();
+};
+
 function addText() {
-    const input = document.getElementById('myInput').value;
-    const text = document.createTextNode(input);
-    const li = document.createElement('li');
-    li.append(text);
+	const input = document.getElementById('myInput').value;
+	// здесь сизвлекли текст из input
+	const text = document.createTextNode(input);
+	// здесь подготовили текст для li
+	const li = document.createElement('li');
+	// создали элемент li
+	li.append(text);
+	// добавили текст (text) в li
 
-    li.id = count;
-    count++;
-    console.log(count);
+	const button = document.createElement('button');
+	
+	const textButton = document.createTextNode('❌');
+	button.append(textButton);
 
-    document.getElementById('list').append(li);
+	button.addEventListener('click', function () {
+		deleteText(count);
+	});
 
-    document.getElementById('myInput').value = '';
-    
-}
+	li.append(button);
 
-const deleteText = () => {
-    
+	button.id = count;
+	li.id = count;
+
+	count++;
+	document.getElementById('list').append(li);
+	document.getElementById('myInput').value = '';
 }
